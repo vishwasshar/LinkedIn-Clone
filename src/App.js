@@ -1,12 +1,13 @@
 import "./App.css";
 import Header from "./component/Header/Header";
-import Home from "./component/Home/Home";
+import Feed from "./component/Feed/Feed";
+import profile from "./Images/profile.png";
 
 function App() {
   return (
     <>
-      <Header />
-      <Home />
+      <Header profile={profile} />
+      <Feed profile={profile} />
     </>
   );
 }

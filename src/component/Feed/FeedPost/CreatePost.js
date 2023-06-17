@@ -5,7 +5,7 @@ import { MdArticle } from "react-icons/md";
 
 const CreatePost = (props) => {
   return (
-    <Card className="border border-black  bg-white ">
+    <Card>
       <div className="flex p-3">
         <img src={props.profile} className="rounded-full w-12"></img>
         <button className="border border-gray-400 text-gray-400 text-sm text-left mx-2 px-4 hover:bg-gray-200 w-full rounded-full">

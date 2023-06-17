@@ -1,5 +1,5 @@
 import { useState } from "react";
-import profile from "../../Images/profile.png";
+// import profile from "../../Images/profile.png";
 import NavIcon from "../UI components/NavIcon";
 import {
   AiFillLinkedin,
@@ -14,7 +14,7 @@ import {
 } from "react-icons/bs";
 import { IoNotificationsSharp } from "react-icons/io5";
 
-const Header = () => {
+const Header = (props) => {
   const [wiggle, setWiggle] = useState(false);
   const [zoomOut, setZoomOut] = useState(false);
 
@@ -64,7 +64,7 @@ const Header = () => {
                 }}
               >
                 <img
-                  src={profile}
+                  src={props.profile}
                   className={`${
                     zoomOut && "animate-zoomOut"
                   } h-6 w-6 rounded-xl`}
