@@ -2,16 +2,21 @@ import Card from "../../UI components/Card";
 import CoverImage from "../../../Images/Cover Photo.jpeg";
 // import profile from "../../../Images/profile.png";
 import { BsFillBookmarkFill } from "react-icons/bs";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 const ProfileCard = (props) => {
+  const { profile } = useContext(UserContext);
   return (
-    <Card className="">
+    <Card className="relative">
       <img src={CoverImage} className="min-w-[250px]" />
-      <img
-        src={props.profile}
-        className="h-16 w-16 absolute translate-y-[-50%] translate-x-[130%] border-2 border-white rounded-full"
-      />
-      <div className="border-b border-gray-300 text-center mt-12 pb-4 ">
+      <div className="relative h-10">
+        <img
+          src={profile}
+          className="h-16 w-16 relative left-[37%] translate-y-[-50%] border-2 border-white rounded-full"
+        />
+      </div>
+      <div className="border-b border-gray-300 text-center  pb-4 ">
         <a className="font-sans text-[16px] font-semibold hover:underline cursor-pointer text-gray-700">
           Vishwas Sharma
         </a>

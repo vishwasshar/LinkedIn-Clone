@@ -84,8 +84,7 @@ const LSForm = (props) => {
           </span>
           <span className="text-blue-500 font-semibold cursor-pointer">
             <Link to={props.title == "Sign in" ? "/signup" : "/login"}>
-              {" "}
-              Join now
+              {props.title == "Sign in" ? " Join us" : " Sign in"}
             </Link>
           </span>
         </div>

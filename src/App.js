@@ -1,25 +1,27 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Header from "./component/Header/Header";
 import Feed from "./pages/Feed";
-import profile from "./Images/profile.png";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
   Navigate,
 } from "react-router-dom";
 import LoginSignUpHeader from "./component/Header/LoginSignUpHeader";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import { UserContext } from "./component/context/UserContext";
 
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const { isLoggedIn } = useContext(UserContext);
+  useEffect(() => {
+    
+  }, []);
 
   return (
     <>
-      {isLoggedIn ? <Header profile={profile} /> : <LoginSignUpHeader />}
+      {isLoggedIn ? <Header /> : <LoginSignUpHeader />}
       <Router>
         <Routes>
           <Route
@@ -35,10 +37,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route
             path="/feed"
-            element={
-              isLoggedIn ? <Feed profile={profile} /> : <Navigate to="/login" />
-            }
-            profile={profile}
+            element={isLoggedIn ? <Feed /> : <Navigate to="/login" />}
           />
         </Routes>
       </Router>
