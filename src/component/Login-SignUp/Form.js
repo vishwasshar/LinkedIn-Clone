@@ -3,16 +3,41 @@ import { object, string } from "yup";
 import Card from "../UI components/Card";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../context/UserContext";
 
 const LSForm = (props) => {
+  const { checkEmailSignIn, checkEmailSignUp } = useContext(UserContext);
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    if (props.title == "Sign in") {
+      setMessage("Email isn't registered");
+    } else {
+      setMessage("Email is already registered");
+    }
+  }, []);
+
+  const checkEmail = (email) => {
+    if (props.title == "Sign in") {
+      console.log(checkEmailSignIn(email));
+      return checkEmailSignIn(email);
+    } else {
+      console.log(checkEmailSignUp(email));
+      return checkEmailSignUp(email);
+    }
+  };
   const validate = object({
     email: string()
       .email("Enter a valid E-mail address")
-      .required("Please enter Email"),
+      .required("Please enter Email")
+      .test("email", message, (email) => {
+        return checkEmail(email);
+      }),
     password: string()
       .min(8, "Password must be atleast 8 character")
       .required("Please enter Password"),
   });
+
   return (
     <div className="flex justify-center items-center py-2 bg-white">
       <Card className="border border-black min-h-10 min-w-10 flex-col p-8 shadow-xl">

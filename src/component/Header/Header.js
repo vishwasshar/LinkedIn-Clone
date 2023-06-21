@@ -38,27 +38,31 @@ const Header = (props) => {
           </div>
           <nav className="w-6/12 border-black min-w-[80%] md:min-w-[70%] lg:min-w-[55%]">
             <ul className="flex justify-evenly ">
-              <NavIcon
-                title="Home"
-                link="#"
-                className={
-                  pagePath == "/feed"
-                    ? console.log("Hello")
-                    : console.log("world")
-                }
-              >
+              <NavIcon title="Home" link="#" isActive={pagePath == "/feed"}>
                 <AiFillHome className="text-2xl " />
               </NavIcon>
-              <NavIcon title="My Network" link="#">
+              <NavIcon
+                title="My Network"
+                link="#"
+                isActive={pagePath == "/mynetwork"}
+              >
                 <BsFillPeopleFill className="text-2xl " />
               </NavIcon>
-              <NavIcon title="Jobs" link="#">
+              <NavIcon title="Jobs" link="#" isActive={pagePath == "/jobs"}>
                 <BsFillBriefcaseFill className="text-2xl " />
               </NavIcon>
-              <NavIcon title="Messaging" link="#">
+              <NavIcon
+                title="Messaging"
+                link="#"
+                isActive={pagePath == "/messaging"}
+              >
                 <AiFillMessage className="text-2xl " />
               </NavIcon>
-              <NavIcon title="Notifications" link="#">
+              <NavIcon
+                title="Notifications"
+                link="#"
+                isActive={pagePath == "/notifications"}
+              >
                 <IoNotificationsSharp
                   className={`${wiggle && "animate-wiggle"} text-2xl`}
                   onClick={() => {

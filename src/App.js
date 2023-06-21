@@ -15,9 +15,7 @@ import { UserContext } from "./component/context/UserContext";
 
 function App() {
   const { isLoggedIn } = useContext(UserContext);
-  useEffect(() => {
-    
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>
@@ -34,7 +32,10 @@ function App() {
             path="/login"
             element={isLoggedIn ? <Navigate to="/feed" /> : <Login />}
           />
-          <Route path="/signup" element={<SignUp />} />
+          <Route
+            path="/signup"
+            element={isLoggedIn ? <Navigate to="/feed" /> : <SignUp />}
+          />
           <Route
             path="/feed"
             element={isLoggedIn ? <Feed /> : <Navigate to="/login" />}
