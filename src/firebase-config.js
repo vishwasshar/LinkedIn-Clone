@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAiDYbz3y3X6jrssjiWv0y9WALXYNdD2co",
-  authDomain: "linkedin-4a87a.firebaseapp.com",
-  projectId: "linkedin-4a87a",
-  storageBucket: "linkedin-4a87a.appspot.com",
-  messagingSenderId: "27848508441",
-  appId: "1:27848508441:web:3c48ba5a3e86cb6e9b9688",
-  measurementId: "G-88KP3SNWH9",
+  apiKey: "__API_KEY__",
+  authDomain: "__AUTH_DOMAIN__",
+  projectId: "__PROJECT_ID__",
+  storageBucket: "__STORAGE_BUCKET__",
+  messagingSenderId: "__SENDER_ID__",
+  appId: "__APP_ID__",
+  measurementId: "__MEASUREMENT_ID",
 };
 
 const app = initializeApp(firebaseConfig);
