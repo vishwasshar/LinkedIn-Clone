@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import FeedPost from "../component/Feed/FeedPost/FeedPost";
 import FeedSideBar from "../component/Feed/FeedSideBar/FeedSideBar";
-import News from "../component/Feed/News/News";
+import News from "../component/Feed/Feed News/News";
 import { UserContext } from "../component/context/UserContext";
 
 const Feed = (props) => {

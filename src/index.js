@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import UserStates from "./component/context/UserContext";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-  <UserStates>
-    <App />
-  </UserStates>
+  <Router>
+    <UserStates>
+      <App />
+    </UserStates>
+  </Router>
   // </React.StrictMode>
 );
 

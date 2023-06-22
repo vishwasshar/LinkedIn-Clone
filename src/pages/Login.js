@@ -1,16 +1,17 @@
 import { useContext, useEffect } from "react";
 import LSForm from "../component/Login-SignUp/Form";
 import { UserContext } from "../component/context/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { loginUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Sign In | LinkedIn";
   }, []);
 
   const loginHandler = ({ email, password }) => {
-    console.log({ email, password });
     loginUser(email, password);
   };
 

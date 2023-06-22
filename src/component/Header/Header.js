@@ -38,7 +38,7 @@ const Header = (props) => {
           </div>
           <nav className="w-6/12 border-black min-w-[80%] md:min-w-[70%] lg:min-w-[55%]">
             <ul className="flex justify-evenly ">
-              <NavIcon title="Home" link="#" isActive={pagePath == "/feed"}>
+              <NavIcon title="Home" to="/feed" isActive={pagePath == "/feed"}>
                 <AiFillHome className="text-2xl " />
               </NavIcon>
               <NavIcon

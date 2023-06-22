@@ -5,7 +5,6 @@ const HomeSideBar = (props) => {
   return (
     <>
       <ProfileCard profile={props.profile} />
-      <ActivityCard />
     </>
   );
 };

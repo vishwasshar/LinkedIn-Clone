@@ -8,7 +8,7 @@ import { UserContext } from "../../context/UserContext";
 const ProfileCard = (props) => {
   const { profile } = useContext(UserContext);
   return (
-    <Card className="relative">
+    <Card className="sticky my-2 top-5">
       <img src={CoverImage} className="min-w-[250px]" />
       <div className="relative h-10">
         <img

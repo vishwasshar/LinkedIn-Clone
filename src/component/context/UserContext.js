@@ -1,13 +1,18 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import profile from "../../Images/profile.png";
-import { collection, getDocs, setDoc, doc, getDoc } from "firebase/firestore";
+import { collection, setDoc, doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase-config";
+import { useNavigate } from "react-router-dom";
 
 export const UserContext = createContext();
 
 const UserStates = (props) => {
   const usersCollectionRef = collection(db, "users");
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
+  const navigate = useNavigate();
+  useEffect(() => {
+    isLoggedIn ? navigate("/feed") : navigate("/login");
+  }, [isLoggedIn]);
 
   const checkEmailSignIn = async (email) => {
     const userRef = doc(usersCollectionRef, email);

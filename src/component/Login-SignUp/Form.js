@@ -19,10 +19,8 @@ const LSForm = (props) => {
 
   const checkEmail = (email) => {
     if (props.title == "Sign in") {
-      console.log(checkEmailSignIn(email));
       return checkEmailSignIn(email);
     } else {
-      console.log(checkEmailSignUp(email));
       return checkEmailSignUp(email);
     }
   };
